@@ -3,15 +3,11 @@
 const messageDom = document.getElementById('message')
 const inputDom = document.getElementById('input')
 
-let date = Date.now()
-
-let ws = new WebSocket('ws://10.1.120.39:3000')
+let ws = new WebSocket('ws://192.168.2.109:3000')
 ws.onopen = () => {
   console.log('open connection')
 }
 ws.onmessage = event => {
-  if (Date.now() - date < 100) return
-  date = Date.now()
   const data = event.data
   const spanDom = document.createElement('span')
   spanDom.style = `animation: go 10s linear; top: ${Random(20, 280)}px; color: ${getRandomColor()}`
