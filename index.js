@@ -3,7 +3,7 @@
 const messageDom = document.getElementById('message')
 const inputDom = document.getElementById('input')
 
-let ws = new WebSocket('ws://localhost:9003')
+let ws = new WebSocket('ws://ws-bilibili.vercel.app:9003')
 ws.onopen = () => {
   console.log('open connection')
 }
